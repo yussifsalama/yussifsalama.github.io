@@ -1,0 +1,78 @@
+/* Basic reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Page layout */
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: #111;
+  background: #fdfdfd;
+  padding: 40px 20px;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Typography */
+
+h1 {
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.bio {
+  margin-bottom: 3rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.project {
+  margin-bottom: 1.8rem;
+}
+
+.project h3 a {
+  color: #111;
+  text-decoration: none;
+  border-bottom: 1px solid #999;
+}
+
+.project h3 a:hover {
+  border-color: #000;
+}
+
+/* Footer */
+
+footer {
+  margin-top: 3rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+footer a {
+  color: #555;
+  text-decoration: none;
+  border-bottom: 1px solid #bbb;
+}
+
+footer a:hover {
+  color: #000;
+  border-color: #000;
+}
+
