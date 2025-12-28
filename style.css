@@ -1,89 +1,336 @@
-/* Basic reset */
+/* Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Page layout */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base */
+body {
+  font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.65;
+  color: #111;
+  background: #fdfdfd;
+  padding: 40px 20px;
+}
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* Links */
+a {
+  color: #111;
+  text-decoration: none;
+  border-bottom: 1px solid #999;
+}
+
+a:hover {
+  border-color: #000;
+}
+
+/* Top navigation */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3.5rem;
+}
+
+.nav-name {
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.nav-name a {
+  color: #1f3a2e;
+  border-bottom: none;
+}
+
+.nav-name a:hover {
+  border-bottom: 1px solid #1f3a2e;
+}
+
+.nav-links a {
+  margin-left: 1.6rem;
+  font-size: 0.95rem;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+  margin-bottom: 4.5rem;
+}
+
+.hero-photo {
+  width: 200px;
+  height: auto;
+  border-radius: 6px;
+}
+
+.hero-text h1 {
+  font-size: 1.9rem;
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+}
+
+.role {
+  font-size: 1.05rem;
+  color: #444;
+  margin-bottom: 1.4rem;
+}
+
+.bio {
+  max-width: 520px;
+  margin-bottom: 1.4rem;
+  font-size: 1rem;
+}
+
+.contact-icons {
+  display: flex;
+  gap: 1.1rem;
+  margin-top: 0.6rem;
+}
+
+.contact-icons a {
+  border-bottom: none;
+}
+
+.contact-icons svg {
+  width: 18px;
+  height: 18px;
+  fill: #111;
+}
+
+.contact-icons a:hover svg {
+  fill: #000;
+}
+
+/* Sections */
+section {
+  margin-bottom: 4.5rem;
+}
+
+/* Headers */
+.page-head h1 {
+  font-size: 1.9rem;
+  font-weight: 500;
+  margin-bottom: 3rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 1.6rem;
+}
+
+/* Projects */
+.projects-list {
+  margin-top: 0;
+}
+
+.project {
+  margin-bottom: 2.4rem;
+}
+
+.project h3 {
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+}
+
+.project h3 a {
+  color: #3b5f4c;
+}
+
+.project h3 a:hover {
+  color: #1f3a2e;
+}
+
+.project p {
+  font-size: 0.98rem;
+  color: #333;
+  max-width: 560px;
+}
+
+/* Featured project row */
+.featured-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.2rem;
+  margin-bottom: 3.6rem;
+}
+
+/* Thumbnail */
+.project-thumb {
+  flex: 0 0 180px;
+  max-width: 180px;
+}
+
+.project-thumb img {
+  width: 180px;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+}
+
+/* Selected projects (index) */
+.selected {
+  margin-top: 1rem;
+  margin-bottom: 5rem;
+}
+
+.selected .featured {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.8rem;
+}
+
+.selected .featured img {
+  width: 220px;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* Icons */
+.icon-link {
+  display: inline-block;
+  margin-top: 0.7rem;
+  border-bottom: none;
+}
+
+.icon-link svg {
+  width: 18px;
+  height: 18px;
+  fill: #111;
+}
+
+.icon-link:hover svg {
+  fill: #000;
+}
+
+/* See all link */
+.see-all {
+  margin-top: 1.6rem;
+}
+
+/* Coming soon text */
+.coming-soon {
+  font-size: 0.9rem;
+  color: #777;
+  font-style: italic;
+  margin-top: 0.4rem;
+}
+
+/* Project detail page */
+.project-detail h1 {
+  font-size: 1.9rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+.crumbs {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1.2rem;
+}
+
+.crumbs a {
+  color: #555;
+  border-bottom: 1px solid #bbb;
+}
+
+.crumbs a:hover {
+  color: #111;
+  border-bottom-color: #000;
+}
+
+.crumb-sep {
+  margin: 0 0.4rem;
+}
+
+.project-intro {
+  max-width: 680px;
+  font-size: 1.02rem;
+  margin-bottom: 2rem;
+}
+
+.project-meta {
+  display: grid;
+  gap: 0.6rem;
+  margin-bottom: 2.4rem;
+  color: #333;
+}
+
+.project-hero {
+  margin-bottom: 3rem;
+}
+
+figure img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+figcaption {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.6rem;
+}
+
+.writeup h2 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 2.4rem;
+  margin-bottom: 0.9rem;
+}
+
+.writeup p {
+  max-width: 680px;
+  margin-bottom: 1.2rem;
+  color: #333;
+}
+
+.figure {
+  margin: 1.6rem 0 2.2rem 0;
+}
+
+.repo-link {
+  margin-top: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
   body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    line-height: 1.6;
-    color: #111;
-    background: #fdfdfd;
-    padding: 40px 20px;
+    padding: 32px 16px;
   }
-  
-  main {
-    max-width: 720px;
-    margin: 0 auto;
+
+  .hero {
+    flex-direction: column;
+    gap: 2rem;
   }
-  
-  /* Typography */
-  h1 {
-    font-size: 2.4rem;
-    margin-bottom: 0.5rem;
+
+  .hero-photo {
+    width: 160px;
   }
-  
-  .tagline {
-    font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 2rem;
+
+  .featured-row {
+    flex-direction: column;
   }
-  
-  h2 {
+
+  .project-thumb {
+    max-width: 220px;
+  }
+
+  .project-thumb img {
+    width: 220px;
+  }
+
+  .nav-name {
     font-size: 1.3rem;
-    margin-bottom: 1.4rem;
   }
-  
-  /* Sections */
-  section {
-    margin-bottom: 3rem;
-  }
-  
-  /* Projects */
-  .project {
-    margin-bottom: 1.8rem;
-  }
-  
-  .project h3 {
-    font-size: 1.05rem;
-    margin-bottom: 0.3rem;
-  }
-  
-  /* Skills */
-  .skills p {
-    font-size: 0.98rem;
-    color: #333;
-  }
-  
-  /* Links */
-  a {
-    color: #111;
-    text-decoration: none;
-    border-bottom: 1px solid #999;
-  }
-  
-  a:hover {
-    border-color: #000;
-  }
-  
-  /* Footer */
-  footer {
-    margin-top: 2rem;
-    font-size: 0.95rem;
-    color: #555;
-    padding-top: 1.5rem;
-    border-top: 1px solid #e0e0e0;
-  }
-  
-  footer a {
-    color: #555;
-    border-bottom-color: #bbb;
-  }
-  
-  footer a:hover {
-    color: #000;
-    border-bottom-color: #000;
-  }
-  
+}

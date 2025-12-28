@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Uber pickups in New York City | Yussif Salama</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+  <main>
+
+    <!-- TOP NAV -->
+    <header class="top-nav">
+      <div class="nav-name">
+        <a href="../index.html">Yussif Salama</a>
+      </div>
+
+      <nav class="nav-links">
+        <a href="../projects.html">Projects</a>
+      </nav>
+    </header>
+
+    <!-- PROJECT DETAIL -->
+    <article class="project-detail">
+
+      <div class="crumbs">
+        <a href="../projects.html">Projects</a>
+        <span class="crumb-sep">/</span>
+        <span>Uber pickups in NYC</span>
+      </div>
+
+      <h1>Uber pickups in New York City</h1>
+
+      <p class="project-intro">
+        As a transportation engineering consultant and data scientist, I am interested in how
+        travel behavior varies across space and time, and what those patterns reveal about demand,
+        mobility, and system performance. In this project, I analyze a sample of Uber pickup data
+        from New York City to explore temporal trends and identify geographic clusters of activity.
+        Ridehailing data provides a unique lens into real world travel demand by capturing where
+        people choose to travel and when those decisions occur.
+      </p>
+
+      <div class="project-meta">
+        <div><strong>Data source:</strong> Uber Technologies Inc., July 2014 sample dataset</div>
+        <div><strong>Methods:</strong> aggregation, visualization, KMeans clustering</div>
+        <div>
+          <strong>Repository:</strong>
+          <a href="https://github.com/yussifsalama/uber-nyc-pickup-analysis" target="_blank">
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <figure class="project-hero">
+        <img
+          src="../images/Uber_Pickups_NYC/KCluster.png"
+          alt="NYC Uber pickup KMeans clustering diagram"
+        />
+        <figcaption>
+          KMeans clustering of Uber pickup locations, revealing multiple high demand centers across New York City.
+        </figcaption>
+      </figure>
+
+      <section class="writeup">
+
+        <h2>1. Data and tooling</h2>
+        <p>
+          The analysis is conducted in Python using pandas for data loading and preparation,
+          matplotlib and seaborn for visualization, and scikit learn for KMeans clustering.
+          The raw dataset consists of pickup timestamps and geographic coordinates.
+        </p>
+
+        <h2>2. Data cleaning and feature engineering</h2>
+        <p>
+          Column names are standardized and duplicate records removed. Pickup timestamps are
+          converted to datetime format and expanded into key temporal features including hour,
+          day of month, weekday, and month. These features allow demand to be compared across
+          multiple temporal scales.
+        </p>
+
+        <h2>3. Geographic filtering</h2>
+        <p>
+          To focus the analysis on realistic New York City trips, pickup coordinates are filtered
+          using reasonable latitude and longitude bounds. This removes GPS errors and outlier points
+          located outside the metropolitan area.
+        </p>
+
+        <h2>4. Temporal demand patterns</h2>
+        <p>
+          Pickup activity is summarized by hour, day of month, and weekday. The results show a
+          strong late afternoon and early evening peak, with demand building steadily after the
+          morning lull and peaking around typical after work hours. Activity is strongest during
+          the middle of the week and declines on weekends.
+        </p>
+
+        <figure class="figure">
+          <img
+            src="../images/Uber_Pickups_NYC/BarGraph.png"
+            alt="Uber pickup distributions by hour, day, and weekday"
+          />
+          <figcaption>
+            Temporal distributions highlighting evening demand peaks and a strong weekday cycle.
+          </figcaption>
+        </figure>
+
+        <h2>5. Weekday by hour heatmap</h2>
+        <p>
+          Aggregating pickups by weekday and hour provides a compact view of recurring demand
+          patterns. The heatmap reveals consistent weekday evening surges, particularly Tuesday
+          through Thursday, while weekend demand is lower and more evenly distributed throughout
+          the day.
+        </p>
+
+        <figure class="figure">
+          <img
+            src="../images/Uber_Pickups_NYC/Heatmap.png"
+            alt="Heatmap of Uber pickups by weekday and hour"
+          />
+          <figcaption>
+            Heatmap of Uber pickups by weekday and hour, illustrating consistent weekday evening intensity.
+          </figcaption>
+        </figure>
+
+        <h2>6. Spatial clustering analysis</h2>
+        <p>
+          KMeans clustering is applied to pickup coordinates to identify geographic concentrations
+          of ridehailing activity. Cluster centers align with known high demand areas including
+          Midtown and Lower Manhattan, parts of Brooklyn and Queens, and peripheral regions. These
+          clusters reflect a mix of employment centers, nightlife districts, and transit rich areas.
+        </p>
+
+        <h2>7. Key findings</h2>
+        <p>
+          Several clear patterns emerge from the analysis. Temporally, ridehailing demand peaks in
+          the late afternoon and early evening and follows a strong weekday cycle. Spatially, pickups
+          cluster around dense, transit accessible, and commercially active neighborhoods. Together,
+          these trends demonstrate how ridehailing data can inform transportation planning, demand
+          modeling, and operational decision making.
+        </p>
+
+        <p class="repo-link">
+          <a href="https://github.com/yussifsalama/uber-nyc-pickup-analysis" target="_blank">
+            View full code and notebook on GitHub
+          </a>
+        </p>
+
+      </section>
+
+    </article>
+
+  </main>
+</body>
+</html>
